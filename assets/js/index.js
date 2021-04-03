@@ -4,6 +4,7 @@ const filterButtons = document.getElementsByName("filter");
 const todoList = document.getElementsByClassName("todo__body")[0];
 const footer = document.getElementsByClassName("todo__footer")[0];
 const clear = document.getElementsByClassName("clear_complete")[0];
+const box = document.getElementsByClassName("box")[0];
 const selectAll = document.getElementsByName("select-all")[0];
 
 let renderType = 0;
@@ -113,11 +114,7 @@ const renderItem = () => {
     let items = todo.GetItems(renderType);
 
     //set value for select all checkbox
-    if (todo.itemsLeft < 1 && todo.todos.length > 0){
-        selectAll.checked = true;
-    }else{
-        selectAll.checked = false;
-    }
+    selectAll.checked = todo.itemsLeft < 1 && todo.todos.length > 0;
 
     //append items in list
     items.forEach(b => {
@@ -136,9 +133,11 @@ const renderItem = () => {
     if (todo.todos.length < 1) {
         footer.classList.add("hidden")
         todoList.classList.add("hidden")
+        box.classList.add("hidden")
     } else {
         footer.classList.remove("hidden")
         todoList.classList.remove("hidden")
+        box.classList.remove("hidden")
     }
 
     //set counter item
