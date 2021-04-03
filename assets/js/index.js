@@ -57,6 +57,8 @@ const createItem = (item) => {
         }
     });
 
+    let tapedTwice = false;
+
     //create element for show text and his editing
     let text = Object.assign(document.createElement("div"), {
         innerHTML: item.text,
@@ -81,6 +83,14 @@ const createItem = (item) => {
                 })
                 isEdit = true;
             }
+        },
+        ontouchstart: () => {
+            if (!tapedTwice){
+                tapedTwice = true;
+                setTimeout(function () { tapedTwice = false}, 300)
+                return false;
+            }
+            alert("test")
         }
 
     });
