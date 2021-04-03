@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+
+<div class="container">
+    <div class="logo">Todos</div>
+    <div class="todo">
+
+        <div class="todo__header">
+            <div class="select_all"><label><input type="checkbox" name="select-all"/><span></span></label></div>
+            <input type="text" name="todo_text" placeholder="What needs to be done?">
+        </div>
+
+        <div class="todo__body"></div>
+
+        <div class="todo__footer">
+
+            <div class="count">
+                <span class="items_count">0</span>&nbsp;items left
+            </div>
+
+            <div class="filter">
+
+                <label class="filter__button">
+                    <input type="radio" name="filter" value="0" checked="checked"/>
+                    <span>All</span>
+                </label>
+
+                <label class="filter__button">
+                    <input type="radio" name="filter" value="1"/>
+                    <span>Active</span>
+                </label>
+
+                <label class="filter__button">
+                    <input type="radio" name="filter" value="2"/>
+                    <span>Completed</span>
+                </label>
+
+            </div>
+
+            <div class="clear">
+                <a class="clear_complete" href="javascript:void(0)">Clear completed</a>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <div class="help">
+        <span>Double-click to edit a todo. Press `Enter` or click in an empty space to save</span>
+        <span>Created by <span>Evgeniy Zhokin</span></span>
+    </div>
+</div>
+
+
+<script src="assets/js/Todo.js"></script>
+<script src="assets/js/index.js"></script>
+
+</body>
+</html>

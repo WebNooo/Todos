@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Calibri, 'sans-serif';
+    color: #777777;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e3e6e9;
+}
+
+.container {
+
+}
+
+.todo {
+    background: #fff;
+    width: 600px;
+    min-height: 50px;
+    max-height: 700px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
+}
+
+.box1 {
+    height: 5px;
+    width: 594px;
+    background: white;
+    margin: 0 auto;
+    border-bottom: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .1);
+}
+
+.box2 {
+    height: 5px;
+    width: 584px;
+    background: white;
+    margin: 0 auto;
+    border-bottom: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
+
+}
+
+.logo{
+    text-align: center;
+    font-size: 64px;
+    margin-bottom: 30px;
+    color: #c4c4c4;
+}
+
+/*TODO HEADER*/
+
+.todo__header {
+    min-height: 60px;
+    border-bottom: 1px solid #e9e9e9;
+    display: flex;
+}
+
+.todo__header > .select_all {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo__header > .select_all > label > input[type=checkbox]{
+    display: none;
+}
+
+.todo__header > .select_all > label > span:after{
+    color: #bcbcbc;
+    content: ">";
+    font-weight: bold;
+    font-family: Consolas, 'sans-serif';
+    font-size: 40px;
+    display: inline-block;
+    transform: rotate(90deg);
+}
+
+.todo__header > .select_all > label > input[type=checkbox]:checked + span:after{
+    color: #484848;
+}
+
+.todo__header > input[type=text] {
+    width: 540px;
+    height: 60px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 5px;
+    font-size: 26px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.todo__header > input[type=text]::placeholder {
+    color: #d0d0d0;
+}
+
+/*TODO BODY*/
+
+.todo__body {
+    max-height: 540px;
+    overflow: auto;
+}
+
+/*ITEM*/
+.todo__body > .empty {
+    justify-content: center;
+}
+
+.todo__body > .item {
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.todo__body > .item > label {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+}
+
+.todo__body > .item > label > span{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    display: block;
+    border: 1px solid #c8c8c8;
+    border-radius: 15px;
+}
+
+.todo__body > .item > label > span:hover{
+    border: 1px solid #b7b7b7;
+}
+
+.todo__body > .item > label > input[type=checkbox]:checked + span:before{
+    font-size: 20px;
+    position: absolute;
+    top: -3px;
+    left: 4px;
+    color: #2db02d;
+    content: "✓";
+}
+
+.todo__body > .item > label > input[type=checkbox]{
+    display: none;
+}
+
+.todo__body > .item > .item__text {
+    width: 500px;
+    font-size: 20px;
+    word-wrap: anywhere;
+}
+
+.todo__body > .item > .item__remove {
+    width: 60px;
+    display: flex;
+    visibility: hidden;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.todo__body > .item > .item__remove:after{
+    content: "🗙";
+}
+
+.todo__body > .item:hover .item__remove {
+    visibility: visible;
+}
+
+.todo__body > .item > .item__remove:hover {
+    text-decoration: none;
+    color: crimson;
+}
+
+.completed{
+    color: #a0a0a0;
+    text-decoration: line-through;
+    font-weight: 300;
+}
+
+.text_edit{
+    height: 59px;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 18px;
+}
+
+
+/*TODO FOOTER*/
+
+.hidden{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+.todo__footer {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 100%;
+}
+
+
+/*COUNT*/
+
+.todo__footer > .count {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    padding-left: 15px;
+}
+
+
+/*CLEAR*/
+
+.todo__footer > .clear {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    padding-right: 15px;
+}
+
+
+/*FILTER*/
+
+.todo__footer > .filter {
+    display: flex;
+    justify-content: center;
+}
+
+.todo__footer > .filter > label {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.todo__footer > .filter > label > span {
+    border: 1px solid transparent;
+    padding: 3px 7px;
+    border-radius: 3px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.todo__footer > .filter > label > span:hover {
+    border: 1px solid #eaeaea;
+}
+
+.todo__footer > .filter > label > input[type=radio] {
+    display: none;
+}
+
+.todo__footer > .filter > label > input[type=radio]:checked + span {
+    border: 1px solid #d4d4d4;
+}
+
+/*HELP*/
+
+.help {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.help > span {
+    display: block;
+    color: #bebebe;
+}
+
+.help > span > span {
+    color: #a7a7a7;
+}
+
+/*SCROLLBAR*/
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #f1f1f1 #e9e9e9;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #e9e9e9;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #c8c8c8;
+    border-radius: 5px;
+}
